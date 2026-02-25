@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GRANDSLAM - Cart</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo"><a href="products.html">GRANDSLAM</a></div>
+        <a href="cart.html" class="cart-link">
+            🛒 Cart <span id="cart-badge" class="badge">0</span>
+        </a>
+    </nav>
+    <main class="container">
+        <h1 class="page-title">Your Cart</h1>
+        <div id="cart-container" class="cart-container">
+            <div id="cart-items" class="cart-items">
+                <!-- Cart items injected via JS -->
+            </div>
+            <div class="cart-summary">
+                <h2>Order Summary</h2>
+                <div class="summary-row">
+                    <span>Subtotal</span>
+                    <span id="subtotal">₹0.00</span>
+                </div>
+                <div class="summary-row">
+                    <span>GST (18%)</span>
+                    <span id="gst">₹0.00</span>
+                </div>
+                <div class="summary-row total-row">
+                    <span>Final Total</span>
+                    <span id="final-total">₹0.00</span>
+                </div>
+                <button id="place-order-btn" class="btn btn-primary btn-block">Place Order</button>
+                <button id="clear-cart-btn" class="btn btn-outline btn-block mt-2">Clear Cart</button>
+            </div>
+        </div>
+        <div id="empty-cart-msg" class="empty-cart hidden">
+            <p>Your cart is empty.</p>
+            <a href="products.html" class="btn btn-primary mt-2">Continue Shopping</a>
+        </div>
+    </main>
+
+    <!-- Checkout Modal -->
+    <div id="checkout-modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Checkout Details</h2>
+                <button id="close-modal-btn" class="close-btn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="customerName">Full Name</label>
+                    <input type="text" id="customerName" placeholder="Enter your full name" class="form-control">
+                    <span id="name-error" class="error-text hidden">Please enter your name</span>
+                </div>
+                <div class="form-group">
+                    <label for="customerPhone">Contact Number</label>
+                    <div class="phone-input-group">
+                        <span class="phone-prefix">+91</span>
+                        <input type="tel" id="customerPhone" placeholder="10-digit mobile number" class="form-control" maxlength="10">
+                    </div>
+                    <span id="phone-error" class="error-text hidden">Enter valid 10-digit mobile number</span>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="proceed-whatsapp-btn" class="btn btn-primary btn-block">Proceed to WhatsApp</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
